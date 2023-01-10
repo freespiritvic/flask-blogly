@@ -64,18 +64,18 @@ class UserTestCase(TestCase):
             self.assertTrue(user)
 
 class PostTestCase(TestCase):
-    """Tests for users."""
+    """Tests for posts."""
 
     def setUp(self):
-        """Add sample user."""
+        """Add sample post."""
 
         Post.query.delete()
 
-        users = User(first_name='Slim', last_name='Pickens')
-        db.session.add(users)
+        posts = Post(first_name='Slim', last_name='Pickens')
+        db.session.add(posts)
         db.session.commit()
 
-        self.user_id = users.id
+        self.user_id = posts.id
 
     def tearDown(self):
         """Clean up any fouled transaction."""
