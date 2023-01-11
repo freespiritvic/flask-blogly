@@ -35,7 +35,7 @@ class Post(db.Model):
     title = db.Column(db.Text, nullable=False)
     content = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=func.now()) 
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'),nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def __repr__(self):
         """Respresentation of self; date & time of post creation"""
